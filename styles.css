@@ -1,0 +1,12 @@
+body{background: #1e2730;}
+svg {
+  width: 40%;
+  border: 1px solid #31404e;
+  display:inline-block;
+  margin:.5em;
+}
+
+polygon,path{
+  stroke: linen;
+  fill: none;
+}
