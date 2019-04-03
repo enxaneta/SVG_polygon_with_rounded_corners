@@ -1,26 +1,22 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>SVG checkbox</title>
-<link rel="stylesheet" href="/styles.css" />
-</head>
+<h4>SVG  Polygon With Rounded Corners</h4> 
 
-<body>
+<div class="wrap"> 
+<label>Input: the initial polygon</label>
+<textarea id="TA">10,10 50,30 100,10 100, 90 50,70 10,90 10,10</textarea>
+</div>
 
-<svg viewBox="0 0 110 100">
+<div class="wrap">  
+<svg id="a">
   <polygon id="poly" points="10,10 50,30 100,10 100, 90 50,70 10,90 10,10 " />
-</svg>
+</svg> 
+  
 
-<svg id="svg" viewBox="0 0 110 100"> 
-  <path id="Test" d="" /> 
+<svg id="b"> 
+  <path id="roundedCorners" d="" /> 
 </svg>
+</div>
 
-<script src="rounded_corners.js"></script>
-<script>
-let r = 10;
-let d = polygonWithRoundedCorners(poly, r);
-Test.setAttributeNS(null,"d",d)
-</script>  
-</body>
-</html>
+<div class="wrap">
+<label>Output: the path with rounded corners</label>
+<textarea id="output"></textarea>
+</div> 
