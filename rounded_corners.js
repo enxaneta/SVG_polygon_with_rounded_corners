@@ -5,7 +5,7 @@ let d; // the d attribute of the path
 function getPoints(poly) {
   // poly is the  polygon element
   let polyPoints = poly
-    .replace(/\r?\n|\r|\t|  +/g, "")
+    .replace(/(\r?\n|\r|\t)+/g, "")
     .replace(/\-/g, " -")
     .split(/[ ,]+/);
   polyPoints = removeEmptyElements(polyPoints);
