@@ -1,48 +1,42 @@
+#wrapper {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  font-family: consolas;
+}
+p {
+  text-align: center;
+}
+#itr {
+  width: 50%;
+}
 h4 {
   font-family: verdana;
   font-size: 2rem;
   text-align: center;
 }
-
-svg {
-  border: 1px solid #d9d9d9;
-}
-path,
-polygon {
-  fill: none;
-  stroke: green;
-  stroke-width: 3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-}
-
 textarea {
   width: 100%;
-  max-width: 30rem;
-  margin: 1em auto;
   display: block;
 }
-
+label {
+  flex: 1 0 45%;
+  margin: 0.5em;
+}
+label small{font-size:70%}
 .wrap {
-  max-width: 30rem;
-  margin: 1em auto;
+  flex: 1 0 45%;
 }
-
-.wrap:nth-of-type(2) {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+svg {
+  border: 1px solid #d9d9d9;
+  display: inline-block;
+  margin: 0.5em;
 }
-p {
-  text-align: center;
-}
-em {
-  font-family: serif;
-}
-#theDefs {
-  height: 0;
-  width: 0;
-  position: absolute;
-  left: -100em;
+polygon,
+path {
+  stroke: #6ab150;
+  fill: none;
 }
