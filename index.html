@@ -1,22 +1,35 @@
-<h4>SVG  Polygon With Rounded Corners</h4> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Polygon with rounded corners*</title>
+<link rel="stylesheet" type="text/css" href="styles.css" >
 
-<div class="wrap"> 
-<label>Input: the initial polygon</label>
-<textarea id="TA">10,10 50,30 100,10 100, 90 50,70 10,90 10,10</textarea>
-</div>
-
-<div class="wrap">  
-<svg id="a">
-  <polygon id="poly" points="10,10 50,30 100,10 100, 90 50,70 10,90 10,10 " />
-</svg> 
-  
-
-<svg id="b"> 
-  <path id="roundedCorners" d="" /> 
+</head>
+<body translate="no">
+<div id="wrapper">
+<h4>Polygon with rounded corners</h4>
+<section>
+<label>Input: <small>the points value for the polygon</small><br>
+<textarea id="TA">50,14 100,100 0,100</textarea></label>
+<label>Output: <small>the d attribute for the path</small><br>
+<textarea id="outputTA"></textarea></label>
+</section>
+<p><label>roundness: <span id="val"></span></br><input id="itr" type="range" min="0" max="100" value="10"></p>
+<section>
+<div class="wrap">
+<svg id="polygonSVG" viewBox="0 0 110 100">
+<polygon id="thePoly" points="50,14 100,100 0,100" />
 </svg>
 </div>
-
 <div class="wrap">
-<label>Output: the path with rounded corners</label>
-<textarea id="output"></textarea>
-</div> 
+<svg id="pathSVG" viewBox="0 0 110 100">
+<path id="rounded" d="" />
+</svg>
+</div>
+</section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
