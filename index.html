@@ -8,28 +8,34 @@
 
 </head>
 <body translate="no">
-<div id="wrapper">
+
 <h4>Polygon with rounded corners</h4>
-<section>
-<label>Input: <small>the points value for the polygon</small><br>
-<textarea id="TA">50,14 100,100 0,100</textarea></label>
-<label>Output: <small>the d attribute for the path</small><br>
-<textarea id="outputTA"></textarea></label>
-</section>
-<p><label>roundness: <span id="val"></span></br><input id="itr" type="range" min="0" max="100" value="10"></p>
-<section>
-<div class="wrap">
-<svg id="polygonSVG" viewBox="0 0 110 100">
-<polygon id="thePoly" points="50,14 100,100 0,100" />
-</svg>
-</div>
-<div class="wrap">
-<svg id="pathSVG" viewBox="0 0 110 100">
-<path id="rounded" d="" />
-</svg>
-</div>
-</section>
-</div>
+ <p><label>roundness: <span id="val"></span> <input id="itr" type="range" min="0" max="100" value="10"></p>
+<section id="wrap">
+  <div class="ta_wrap">
+  <span>Input:</span><br>
+  <textarea id="ta_input">50,14 100,100 0,100
+  </textarea>
+  
+  </div>
+  <div class="ta_wrap">
+  <span>Output:</span><br>
+  <textarea id="ta_output"></textarea>
+  </div>
+  
+ 
+  <div class="svg_wrap">
+  <svg id="svg_input">
+    <polygon id="thePoly" points="50,14 100,100 0,100" />
+  </svg>
+  </div>
+  <div class="svg_wrap">
+  <svg id="svg_output">
+    <path id="rounded" d="" />
+  </svg>
+  </div>
+</section>  
+  
 <script src="rounded_corners.js"></script>
 </body>
 </html>
