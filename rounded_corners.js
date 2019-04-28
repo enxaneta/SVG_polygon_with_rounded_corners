@@ -7,7 +7,7 @@ function getPoints(poly) {
   let polyPoints = poly
     .replace(/(\r?\n|\r|\t)+/g, "")
     .replace(/\-/g, " -")
-    .split(/[ ,]+/);
+    .split(/[\s,]+/);
   polyPoints = removeEmptyElements(polyPoints);
   console.log(polyPoints);
   // remove last point if equal with the first point
@@ -39,6 +39,7 @@ function removeEmptyElements(array) {
   }
   return array;
 }
+
 function polygonWithRoundedCorners(poly, r) {
   let points = getPoints(poly);
   let d = "";
@@ -72,7 +73,7 @@ onInput();
 
 itr.addEventListener("input", onInput);
 
-TA.addEventListener("input", onInput);
+ta_input.addEventListener("input", onInput);
 
 function onInput() {
   // the roundness value
@@ -80,7 +81,7 @@ function onInput() {
   // output the roundness
   val.innerHTML = r;
   // get the `points` attribute's value
-  poly = TA.value;
+  poly = ta_input.value;
   // set the value of the attribute `points` for the polygon
   thePoly.setAttributeNS(null, "points", poly);
   // reset the value of the viewBox attributes of the two svg elements
@@ -88,13 +89,13 @@ function onInput() {
   // the d attribute for the path
   d = polygonWithRoundedCorners(poly, r);
   // output the d attribute as the value of the output text area
-  outputTA.value = d;
+  ta_output.value = d;
   rounded.setAttributeNS(null, "d", d);
 }
 
 function resetViewBox() {
   let BB = thePoly.getBBox();
   let viewBox = `${BB.x - 10} ${BB.y - 10} ${BB.width + 20} ${BB.height + 20}`;
-  polygonSVG.setAttributeNS(null, "viewBox", viewBox);
-  pathSVG.setAttributeNS(null, "viewBox", viewBox);
+  svg_input.setAttributeNS(null, "viewBox", viewBox);
+  svg_output.setAttributeNS(null, "viewBox", viewBox);
 }
